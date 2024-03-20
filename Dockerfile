@@ -13,11 +13,13 @@ RUN apt-get update && apt-get upgrade -y && \
     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python3 get-pip.py
 
+RUN apt install ffmpeg
+
 # Create a virtual environment
 RUN python3 -m venv /opt/venv
 
 # Install runpod within the virtual environment
-RUN /opt/venv/bin/pip install runpod
+RUN /opt/venv/bin/pip install runpod firebase==4.0.1 firebase-admin==6.4.0 ffmpeg-python
 
 ADD src/handler.py /rp_handler.py
 

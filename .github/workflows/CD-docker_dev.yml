@@ -42,3 +42,8 @@ jobs:
         with:
           push: true
           tags: ${{ vars.DOCKERHUB_REPO }}/${{ vars.DOCKERHUB_IMG }}:${{ env.DOCKER_TAG }}
+          build-args: |
+            COG_REPO=camenduru
+            COG_MODEL=dynami-crafter-576x1024
+            COG_VERSION=e79ff8d01e81cbd90acfa1df4f209f637da2c68307891d77a6e4227f4ec350f1
+
